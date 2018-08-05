@@ -66,11 +66,11 @@ class Post extends PureComponent {
   renderUser(user) {
     if (user.website) {
       return (
-        <div>Author: <a href={`http://${user.website}`} target='_blank'>{user.name}</a></div>
+        <div data-test='postUser'>Author: <a href={`http://${user.website}`} target='_blank'>{user.name}</a></div>
       );
     }
 
-    return (<div>Author: {user.name}</div>);
+    return (<div data-test='postUser'>Author: {user.name}</div>);
   }
 
   render() {
@@ -86,14 +86,14 @@ class Post extends PureComponent {
     return (
       <div className={styles.post}>
         <Link className={styles.titleLink} to={`/${post.id}`}>
-        {!excerpt && <Link className={styles.goBack} to='/'><span aria-label='Go back' role='img'>🔙</span></Link>}
-          <h3 className={styles.title}>{post.title}</h3>
+          {!excerpt && <Link className={styles.goBack} to='/'><span aria-label='Go back' role='img'>🔙</span></Link>}
+          <h3 data-test='postTitle' className={styles.title}>{post.title}</h3>
         </Link>
 
-        {!excerpt && <div className={styles.content}>
+        {!excerpt && <div data-test='postContent' className={styles.content}>
           {user.name && this.renderUser(user)}
 
-          {post.body && <p>{post.body}</p>}
+          {post.body && <p data-test='postBody'>{post.body}</p>}
         </div>}
       </div>
     );
