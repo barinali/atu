@@ -27,19 +27,16 @@ class Posts extends PureComponent {
       .then(response => response.json())
       .then(posts => {
         this.setState({
-          posts
+          posts,
+          loading: false
         });
       })
       .catch(_ => {
         this.setState({
-          failed: true
+          failed: true,
+          loading: false
         })
       })
-      .finally(_ => {
-        this.setState({
-          loading: false
-        });
-      });
   }
   
   render() {
