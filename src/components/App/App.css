@@ -2,3 +2,10 @@
   margin: 0 auto;
   width: 60%;
 }
+
+
+@media (max-width: 620px) {
+  :local .container {
+    width: 100%;
+  }
+}

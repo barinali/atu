@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 
 import Post from '../Post/Post';
+import styles from './Posts.css';
 
 class Posts extends PureComponent {
   constructor() {
@@ -50,7 +51,7 @@ class Posts extends PureComponent {
 
     return (
       <Fragment>
-        <h2>Posts</h2>
+        <h2 className={styles.title}>Posts</h2>
 
         {loading && <article>
           Posts are loading.
