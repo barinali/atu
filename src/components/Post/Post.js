@@ -86,7 +86,7 @@ class Post extends PureComponent {
     return (
       <div className={styles.post}>
         <Link className={styles.titleLink} to={`/${post.id}`}>
-        {!excerpt && <Link className={styles.goBack} to='/'>🔙</Link>}
+        {!excerpt && <Link className={styles.goBack} to='/'><span aria-label='Go back' role='img'>🔙</span></Link>}
           <h3 className={styles.title}>{post.title}</h3>
         </Link>
 
