@@ -8,18 +8,21 @@
 
 :local .titleLink {
   color: #333;
-  position: relative;;
   text-decoration: none;
 }
 
 :local .goBack {
   font-size: 32px;
-  position: absolute;
-  right: 100%;
   text-decoration: none;
-  margin-right: 10px;
 }
 
 :local .content {
   padding: 10px 20px;
+}
+
+
+@media (max-width: 620px) {
+  :local .goBack {
+    margin-left: 20px;
+  }
 }
